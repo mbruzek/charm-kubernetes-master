@@ -24,6 +24,8 @@ def install():
         'export KUBERNETES_MASTER=http://$KUBE_MASTER_IP\n',
         ]
     update_rc_files(strings)
+    with open('/root/.kubernetes_auth', 'w') as stream:
+        stream.write("{'Insecure': true}")
     hookenv.log('Downloading kubernetes code')
     clone_repository()
 
