@@ -17,15 +17,17 @@ def install():
 
     hookenv.log('Adding kubernetes and go to the path')
 
+    # TODO: Consider better ways to write these variables, in a shared path /opt/kubernetes/
     strings = [
         'export GOROOT=/usr/local/go\n',
         'export PATH=$PATH:$GOROOT/bin\n',
         'export KUBE_MASTER_IP=0.0.0.0\n',
         'export KUBERNETES_MASTER=http://$KUBE_MASTER_IP\n',
+        'export KUBERNETES_PROVIDER=juju\n',
         ]
     update_rc_files(strings)
     with open('/root/.kubernetes_auth', 'w') as stream:
-        stream.write("{'Insecure': true}")
+        stream.write('{"Insecure": true}')
     hookenv.log('Downloading kubernetes code')
     clone_repository()
 
