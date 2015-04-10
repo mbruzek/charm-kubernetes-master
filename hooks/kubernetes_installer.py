@@ -66,7 +66,7 @@ class KubernetesInstaller():
         print(go_env['PATH'])
 
         # Compile the binaries with the make command using the WHAT variable.
-        make_what = "make all WHAT='cmd/kube-apiserver cmd/kubectl "\
+        make_what = "make all WHAT='cmd/e2e cmd/kube-apiserver cmd/kubectl "\
                     "cmd/kube-controller-manager plugin/cmd/kube-scheduler "\
                     "cmd/kubelet cmd/kube-proxy'"
         print(make_what)
