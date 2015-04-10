@@ -1,2 +1,2 @@
-e2e:
+endtoend:
     description: Kicks off the end to end tests for Kubernetes
