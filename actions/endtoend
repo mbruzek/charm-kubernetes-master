@@ -1,0 +1,4 @@
+#!/bin/bash
+set -ex
+export KUBERNETES_PROVIDER=juju
+/opt/kubernetes/_output/local/bin/linux/amd64/e2e --host=http://0.0.0.0 --auth_config=/root/.kubernetes_auth
